@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Assignment 1 | Portfolio</title>
+    <title>Portfolio</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -95,78 +95,100 @@
     </nav>        
 <!-- End of Navbar -->
 
-    <!-- this is profile -->
+    <!-- section profile -->
     <div class="container ml-auto">
       <div class="row justify-content-start">
         <div class="col-md-2 ml-auto pt-4 d-flex flex-column align-items-center">
           <img src="images/new.jpg" alt="foto profil" class="rounded-circle" width="125px" height="125px">
         </div>
         <div class="section1 col-md-6">
-          <h3>Nida Muallimah</h3>
-          <p>Front End Engineer</p>
+          <h3 id="namaProfil">Nida Muallimah</h3>
+          <p id="roleProfil">Front End Engineer</p>
             <button type="button" class="btn btn-info">Kontak</button>
             <button type="button" class="btn btn-outline-success">Resume</button>
         </div>
         <div class="section2 col pt-4">
           <div class="row">
             <div class="col-md-4 label fw-medium">Availability</div>
-            <div class="col-md-8">Full Time</div>
+            <div class="col-md-8" id="availProfil">Full Time</div>
           </div>
           <div class="row">
             <div class="col-md-4 label fw-medium">Usia</div>
-            <div class="col-md-8">20</div>
+            <div class="col-md-8" id="ageProfil">20</div>
           </div>
           <div class="row">
             <div class="col-md-4 label fw-medium">Lokasi</div>
-            <div class="col-md-8">Banjarbaru, Indonesia</div>
+            <div class="col-md-8" id="lokasiProfil">Banjarbaru, Indonesia</div>
           </div>
           <div class="row">
             <div class="col-md-4 label fw-medium">Pengalaman</div>
-            <div class="col-md-8">2</div>
+            <div class="col-md-8" id="experProfil">2</div>
           </div>
           <div class="row">
             <div class="col-md-4 label fw-medium">Email</div>
-            <div class="col-md-8">nidamuallimah03@gmail.com</div>
+            <div class="col-md-8" id="emailProfil">nidamuallimah03@gmail.com</div>
           </div>
         </div>
       </div>
     </div>    
-    <!-- end profile -->
+    <!-- end section profile -->
 
     <!-- Forms -->
     <div class="container pt-5 ml-auto">
           <form method="POST" action="#">
               <div class="form-group mb-3">
                   <label for="nim">Nama</label>
-                  <input type="text" class="form-control" id="nama" name="nama" required>
+                  <input type="text" class="form-control" id="namaInput" name="nama" required>
               </div>
               <div class="form-group mb-3">
                   <label for="nama_barang">Role</label>
-                  <input type="text" class="form-control" id="role" name="role" required>
+                  <input type="text" class="form-control" id="roleInput" name="role" required>
               </div>
               <div class="form-group mb-3">
                   <label for="unit_barang">Availability</label>
-                  <input type="text" class="form-control" id="avail" name="avail" required>
+                  <input type="text" class="form-control" id="availInput" name="avail" required>
               </div>
               <div class="form-group mb-3">
                 <label for="unit_barang">Age</label>
-                <input type="text" class="form-control" id="age" name="age" required>
+                <input type="text" class="form-control" id="ageInput" name="age" required>
             </div>
             <div class="form-group mb-3">
               <label for="unit_barang">Lokasi</label>
-              <input type="text" class="form-control" id="lokasi" name="lokasi" required>
+              <input type="text" class="form-control" id="lokasiInput" name="lokasi" required>
           </div>
           <div class="form-group mb-3">
             <label for="unit_barang">Years Experience</label>
-            <input type="text" class="form-control" id="exper" name="exper" required>
+            <input type="text" class="form-control" id="experInput" name="exper" required>
         </div>
         <div class="form-group mb-3">
           <label for="unit_barang">Email</label>
-          <input type="text" class="form-control" id="email" name="email" required>
+          <input type="text" class="form-control" id="emailInput" name="email" required>
       </div>
       <div class="d-grid mb-3">
-        <button type="button" class="btn btn-success">Sumbit</button>
+        <button type="button" class="btn btn-success" onclick="tampilkanData()">Sumbit</button>
       </div>
     </form>
+
+    <script>
+      function tampilkanData() {
+          // Mengambil nilai dari input-form
+          const nama = document.getElementById("namaInput").value;
+          const role = document.getElementById("roleInput").value;
+          const avail = document.getElementById("availInput").value;
+          const age = document.getElementById("ageInput").value;
+          const lokasi = document.getElementById("lokasiInput").value;
+          const exper = document.getElementById("experInput").value;
+          const email = document.getElementById("emailInput").value;
+
+          // Memasukkan nilai ke dalam elemen-elemen di section Profile
+          document.getElementById("namaProfil").textContent = nama;
+          document.getElementById("roleProfil").textContent = role;
+          document.getElementById("availProfil").textContent = avail;
+          document.getElementById("ageProfil").textContent = age;
+          document.getElementById("lokasiProfil").textContent = lokasi;
+          document.getElementById("experProfil").textContent = exper;
+          document.getElementById("emailProfil").textContent = email;
+      }
+  </script>
   </body>
 </html>
