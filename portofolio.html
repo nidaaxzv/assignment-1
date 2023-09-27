@@ -104,7 +104,7 @@
         <div class="section1 col-md-6">
           <h3 id="namaProfil">Nida Muallimah</h3>
           <p id="roleProfil">Front End Engineer</p>
-            <button type="button" class="btn btn-info">Kontak</button>
+            <button type="button" class="btn btn-info active" onclick="editForm()">Edit</button>
             <button type="button" class="btn btn-outline-success">Resume</button>
         </div>
         <div class="section2 col pt-4">
@@ -137,31 +137,31 @@
     <div class="container pt-5 ml-auto">
           <form method="POST" action="#">
               <div class="form-group mb-3">
-                  <label for="nim">Nama</label>
+                  <label for="nama">Nama</label>
                   <input type="text" class="form-control" id="namaInput" name="nama" required>
               </div>
               <div class="form-group mb-3">
-                  <label for="nama_barang">Role</label>
+                  <label for="role">Role</label>
                   <input type="text" class="form-control" id="roleInput" name="role" required>
               </div>
               <div class="form-group mb-3">
-                  <label for="unit_barang">Availability</label>
+                  <label for="availbility">Availability</label>
                   <input type="text" class="form-control" id="availInput" name="avail" required>
               </div>
               <div class="form-group mb-3">
-                <label for="unit_barang">Age</label>
+                <label for="age">Age</label>
                 <input type="text" class="form-control" id="ageInput" name="age" required>
             </div>
             <div class="form-group mb-3">
-              <label for="unit_barang">Lokasi</label>
+              <label for="lokasi">Lokasi</label>
               <input type="text" class="form-control" id="lokasiInput" name="lokasi" required>
           </div>
           <div class="form-group mb-3">
-            <label for="unit_barang">Years Experience</label>
+            <label for="exper">Years Experience</label>
             <input type="text" class="form-control" id="experInput" name="exper" required>
         </div>
         <div class="form-group mb-3">
-          <label for="unit_barang">Email</label>
+          <label for="email">Email</label>
           <input type="text" class="form-control" id="emailInput" name="email" required>
       </div>
       <div class="d-grid mb-3">
@@ -171,23 +171,36 @@
 
     <script>
       function tampilkanData() {
-          // Mengambil nilai dari input-form
-          const nama = document.getElementById("namaInput").value;
-          const role = document.getElementById("roleInput").value;
-          const avail = document.getElementById("availInput").value;
-          const age = document.getElementById("ageInput").value;
-          const lokasi = document.getElementById("lokasiInput").value;
-          const exper = document.getElementById("experInput").value;
-          const email = document.getElementById("emailInput").value;
+        // Mengambil nilai dari input-form
+        const nama = document.getElementById("namaInput").value;
+        const role = document.getElementById("roleInput").value;
+        const avail = document.getElementById("availInput").value;
+        const age = document.getElementById("ageInput").value;
+        const lokasi = document.getElementById("lokasiInput").value;
+        const exper = document.getElementById("experInput").value;
+        const email = document.getElementById("emailInput").value;
 
-          // Memasukkan nilai ke dalam elemen-elemen di section Profile
-          document.getElementById("namaProfil").textContent = nama;
-          document.getElementById("roleProfil").textContent = role;
-          document.getElementById("availProfil").textContent = avail;
-          document.getElementById("ageProfil").textContent = age;
-          document.getElementById("lokasiProfil").textContent = lokasi;
-          document.getElementById("experProfil").textContent = exper;
-          document.getElementById("emailProfil").textContent = email;
+        // Memasukkan nilai ke dalam elemen-elemen di section Profile
+        document.getElementById("namaProfil").textContent = nama;
+        document.getElementById("roleProfil").textContent = role;
+        document.getElementById("availProfil").textContent = avail;
+        document.getElementById("ageProfil").textContent = age;
+        document.getElementById("lokasiProfil").textContent = lokasi;
+        document.getElementById("experProfil").textContent = exper;
+        document.getElementById("emailProfil").textContent = email;
+
+        // Mengosongkan input-form setelah data disubmit
+        document.getElementById("namaInput").value = "";
+        document.getElementById("roleInput").value = "";
+        document.getElementById("availInput").value = "";
+        document.getElementById("ageInput").value = "";
+        document.getElementById("lokasiInput").value = "";
+        document.getElementById("experInput").value = "";
+        document.getElementById("emailInput").value = "";
+      }
+
+      function editForm() {
+        document.getElementById("namaInput").focus();
       }
   </script>
   </body>
